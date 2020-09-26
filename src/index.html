@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="submit">click</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script>
+        // new WebSocket('ws://tecra-r850:8639')
+
+        /// TODO: This is the correct way of doing the work
+        const socket = io('http://tecra-r850:8639', {
+          "path": "/",
+          "transports": [
+            "websocket"
+          ]
+        })
+        const btn = document.getElementById('submit')
+
+        // socket.on('message', data => console.log(data))
+        //
+        // btn.addEventListener('click', () => {
+        //   socket.send('message', {
+        //     user: 'USR1',
+        //     branch: 'BR1',
+        //     action: 'insert',
+        //     collectionName: 'patients',
+        //
+        //     data: {
+        //       name: 'asd',
+        //       cnic: '1231',
+        //       dob: Date.now()
+        //     }
+        //   })
+        // })
+    </script>
+</body>
+</html>
